@@ -1,0 +1,39 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Dialog - Default functionality</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+ 
+
+  <script>
+  $(function() {
+    // $('#dialog').style.visibility = 'hidden'
+
+    $('#click').click( function() {
+      $('#dialog').title = 'Maxwell';
+      $( "#dialog" ).dialog();
+    });
+
+  });
+  </script>
+</head>
+<body>
+ 
+<div id="dialog" title="Song Album Title" style="display:none;">
+  <form name='todowhat' action='/process/' method='get'>
+<input type='submit' value='Play Now' style="width:100%;"><br>
+<input type='submit' value='Play Next' style="width:100%;"><br>
+<input type='submit' value='Add to End of Queue' style="width:100%;"><br>
+</form>
+</div>
+ 
+ <a id="click">Click this</a>
+
+
+</body>
+</html>

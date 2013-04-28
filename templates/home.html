@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+
+{% block script %}
+
+<script>
+var searchby = 'artists';
+
+$(document).ready(function() {
+
+  $("#search").keyup(function()
+    {
+        text=$('#search').val();
+        if (text.length < 2)
+        {
+          $('#list').html('<p>Please Be More Specific</p>');
+        }
+
+        else
+        {
+        var request = $.ajax({
+          url: "/search/" + text
+          });
+
+        request.done(function(response, textStatus, jqXHR){
+          $('#list').html(response);
+        });
+
+        }
+
+    });
+
+  $('#list').click(function(event) {
+    window.location = '/artist/'+event.target.innerHTML;
+  })
+});
+</script>
+
+{% endblock %}
+
+
+{% block body %}
+
+<h2>Search by <id='what'>artists</id></h2>
+
+<input type="text" id="search" name="search"><br>
+
+<ol class "square" id="list">
+results here...
+</ol>
+
+{% endblock %}

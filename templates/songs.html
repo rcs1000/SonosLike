@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block script %}
+
+
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+
+<script>
+
+var songID = 'a123'
+
+$(document).ready(function() {
+
+	$('#list').click(function(event) {
+		window.location = '/play/' + songID;
+	 });
+
+
+})
+
+</script>
+
+{% endblock %}
+
+
+{% block body %}
+
+<h2><a href="/">Search</a> > <a href="/artist/{{ artist }}">{{ artist }}</a> > {{ album }}</h2>
+
+<ol id='list'>
+  {% for song in songs %}
+    <li>{{ song }}</li>
+  {% endfor %}
+</ol>
+
+{% endblock %}

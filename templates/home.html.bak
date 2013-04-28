@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Search by:</h1>
+<a href="/artist">Artist</a><br>
+<a href="/album">Album</a><br>
+<a href="/song">Song</a>
+
+</body>
+</html>
+
