@@ -36,7 +36,6 @@ def popup():
 
 @app.route('/queue', methods=['POST'])
 def queueManagement():
-  f = open('/home/rcs1000/mysite/queue', 'a')
   what = request.form['what'] 
   songID = int(request.form['songID'])
   pl.loadPlaylist()
