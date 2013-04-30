@@ -7,6 +7,25 @@
     list-style: none;
     }
 
+  #button {
+    width: 33%;
+    height: 100%;
+    float: left
+
+  } 
+
+  #toolbar {
+    position: fixed; 
+    bottom: 0px; 
+    left: 0px; 
+    width: 100%; 
+    color: #fff; 
+    background: #fff;
+    display: table-cell;
+    vertical-align: bottom;
+
+  } 
+
   </style>
 
   <!-- Basic Page Needs
@@ -52,5 +71,12 @@
 {% block body %}{% endblock %}
 
 </div>
+
+<div id="toolbar">
+<a href='/'><button id='button' type="button">Home</button></a>
+<a href='/'><button id='button' type="button">Now Playing</button></a>
+<a href='/'><button id='button' type="button">Playlist</button></a>
+</div>
+
 </body>
 </html>

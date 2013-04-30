@@ -187,15 +187,28 @@ class Index:
     def getSongsForAlbum(self, name):
         cnx = self.db()
         cursor = cnx.cursor()
-        q = 'SELECT DISTINCT title FROM id3 WHERE album LIKE "' + name + '%"'
+        q = 'SELECT DISTINCT title, id FROM id3 WHERE album LIKE "' + name + '%"'
         cursor.execute(q)
 
         output = []
 
         for line in cursor:
-            output.append(line["title"])
+            output.append({'title': line["title"], 'id': line["id"]})
 
         return output
+
+    def getDetailsForSongID(self, songID):
+        cnx = self.db()
+        cursor = cnx.cursor()
+        q = 'SELECT DISTINCT title, artist, album FROM id3 WHERE id LIKE "' + str(songID) + '%"'
+        cursor.execute(q)
+
+        output = []
+
+        for line in cursor:
+            output.append({'title': line["title"], 'artist': line["artist"], 'album': line["album"]})
+
+        return output[0]
 
 
     def db(self):
